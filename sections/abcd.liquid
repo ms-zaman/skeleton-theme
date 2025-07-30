@@ -1,0 +1,38 @@
+<!-- File: sections/abcd.liquid -->
+
+{% schema %}
+{
+  "name": "abcd",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Text",
+      "default": "Welcome to Our Store Bro"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading Text",
+      "default": "We offer the best products for you! are u ready for it?"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "abcd",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div style="background: url({{ section.settings.background_image | image_url }}); padding: 60px; text-align: center; color: white;">
+  <h1>{{ section.settings.heading }}</h1>
+  <p>{{ section.settings.subheading }}</p>
+</div>
